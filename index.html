@@ -1,307 +1,136 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FC ESNA 2 - Finance Pro</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <style>
-        :root {
-            --bg-color: #020617;
-            --card-bg: rgba(15, 23, 42, 0.85);
-            --text-color: #f8fafc;
-            --input-bg: rgba(30, 41, 59, 0.7);
-            --primary-neon: #00f2ff;
-            --secondary-neon: #7000ff;
-            --border-color: rgba(0, 242, 255, 0.2);
-            --glow: 0 0 15px rgba(0, 242, 255, 0.3);
-        }
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>OPA Store</title><meta name="description" content="OPA Store: phone repair, software, cash transfers and e-payments."><meta name="theme-color" content="#060810"><link rel="icon" href="favicon.png"><link rel="apple-touch-icon" href="favicon.png"><style>
+:root{--bg:#f3f2ee;--sf:#fffdfa;--tx:#14181a;--mut:#5c6a70;--line:rgba(20,24,26,.12);--navy:#0f8f80;--g:#0f9d8c;--g2:#2fd4c0;--sh:0 20px 50px -22px rgba(20,24,26,.2);--tr:rgba(15,157,140,.35)}
+html.dark{--bg:#090c0f;--sf:#12171b;--tx:#eef2f3;--mut:#8b98a0;--line:rgba(233,238,240,.09);--navy:#2fd4c0;--g:#2fd4c0;--g2:#1aa898;--sh:0 24px 60px -20px rgba(0,0,0,.55);--tr:rgba(47,212,192,.45)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,"Segoe UI",Tahoma,sans-serif;-webkit-font-smoothing:antialiased}
+.nav{position:sticky;top:0;z-index:5;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid var(--line)}
+.in{max-width:1080px;margin:auto;padding:0 18px}
+.nav .in{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-weight:800;letter-spacing:.3px;display:flex;align-items:center;gap:8px}
+.brand i{width:28px;height:28px;border-radius:9px;background:linear-gradient(135deg,var(--navy),var(--g));display:inline-block}
+.tg{display:flex;gap:8px}.tg button{background:var(--sf);color:var(--tx);border:1px solid var(--line);border-radius:999px;height:36px;min-width:36px;padding:0 14px;font-weight:700;cursor:pointer}
+.hero{position:relative;overflow:hidden;padding:46px 0 54px}
+.hero:before{content:"";position:absolute;inset:-30% -20% auto;height:90%;background:radial-gradient(40% 50% at 30% 40%,rgba(47,168,79,.22),transparent),radial-gradient(40% 50% at 75% 30%,rgba(29,58,120,.22),transparent);filter:blur(30px)}
+.hero .in{position:relative;display:grid;gap:28px;grid-template-columns:1fr;align-items:center}
+.pill{display:inline-block;background:var(--sf);border:1px solid var(--line);color:var(--g);font-weight:700;font-size:13px;border-radius:999px;padding:6px 14px;margin-bottom:16px}
+h1{font-size:clamp(30px,6.5vw,52px);line-height:1.18;margin:0 0 14px;letter-spacing:-.5px}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--navy),var(--g));-webkit-background-clip:text;color:transparent}
+.lead{color:var(--mut);font-size:16px;line-height:1.7;margin:0 0 24px;max-width:520px}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.b1,.b2{border-radius:999px;padding:13px 24px;font-weight:800;text-decoration:none;font-size:15px}
+.b1{background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;box-shadow:0 10px 24px rgba(47,168,79,.35)}
+.b2{background:var(--sf);color:var(--tx);border:1px solid var(--line)}
+.logo{background:#fff;border-radius:28px;padding:10px;box-shadow:var(--sh);border:1px solid var(--line);animation:fl 6s ease-in-out infinite}
+.logo img{width:100%;display:block;border-radius:20px}
+@keyframes fl{50%{transform:translateY(-8px)}}
+section{padding:34px 0}
+h2{font-size:26px;margin:0 0 6px;letter-spacing:-.3px}.sub{color:var(--mut);margin:0 0 22px}
+.grid{display:grid;gap:14px;grid-template-columns:1fr}
+.card{background:var(--sf);border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--sh);transition:.3s}
+.card:hover{transform:translateY(-4px)}
+.ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(29,58,120,.14),rgba(47,168,79,.2));color:var(--g);margin-bottom:14px}
+.ico svg{width:24px;height:24px}
+.card h3{margin:0 0 6px;font-size:17px}.card p{margin:0;color:var(--mut);font-size:14px;line-height:1.6}
+.num{display:flex;justify-content:space-between;align-items:center;background:var(--sf);border:1px solid var(--line);border-radius:18px;padding:14px 18px;box-shadow:var(--sh)}
+.num small{color:var(--mut);display:block;font-size:12px;margin-bottom:2px}.num b{font-size:20px;letter-spacing:1px;direction:ltr;display:block;text-align:start}
+.num button{background:color-mix(in srgb,var(--g) 14%,transparent);color:var(--g);border:0;border-radius:999px;padding:9px 18px;font-weight:800;cursor:pointer}
+.two{display:grid;gap:12px;grid-template-columns:1fr}
+.team{display:grid;gap:12px}
+.team .num b{font-size:17px}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:30px 0 40px}
+.rv{animation:up .8s both}@keyframes up{from{opacity:0;transform:translateY(18px)}}
+@media(min-width:760px){.hero .in{grid-template-columns:1.1fr .9fr}.grid{grid-template-columns:repeat(3,1fr)}.two{grid-template-columns:1fr 1fr}.team{grid-template-columns:1fr 1fr}.hero{padding:80px 0}}
 
-        [data-theme="light"] {
-            --bg-color: #f8fafc;
-            --card-bg: rgba(255, 255, 255, 0.9);
-            --text-color: #1e293b;
-            --input-bg: #f1f5f9;
-            --primary-neon: #0ea5e9;
-            --secondary-neon: #6366f1;
-            --border-color: #e2e8f0;
-            --glow: 0 0 10px rgba(14, 165, 233, 0.1);
-        }
+.circ{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5}
+html:not(.dark) .circ{opacity:.3}
+.circ path{fill:none;stroke:var(--tr);stroke-width:1;stroke-dasharray:6 900;animation:tr 9s linear infinite}
+.circ path.s{stroke-dasharray:none;stroke:var(--line)}
+.circ circle{fill:var(--g);opacity:.7}
+@keyframes tr{to{stroke-dashoffset:-906}}
+.eb{display:flex;align-items:center;gap:10px;color:var(--g);font-weight:800;font-size:12px;letter-spacing:2px;margin-bottom:14px}
+.eb:before{content:"";width:18px;height:1.5px;background:var(--g)}
+body{background:var(--bg)!important}
+.hero:before{display:none}
+.card,.num,.logo,.tg button,.pill{border-radius:16px}
+.b1,.b2,.num button{border-radius:14px}
+.b1{background:linear-gradient(135deg,var(--g2),var(--g))!important;color:#04201c!important;box-shadow:0 14px 34px -8px var(--tr)!important}
+.card:hover{border-color:var(--g);box-shadow:0 0 0 1px var(--g),0 18px 40px -18px var(--tr)}
+.ico{background:color-mix(in srgb,var(--g) 14%,transparent)!important;border:1px solid color-mix(in srgb,var(--g) 30%,transparent)}
+.brand i{background:linear-gradient(135deg,var(--g2),var(--g))!important;box-shadow:0 0 18px var(--tr);border-radius:10px!important}
+.nav{background:color-mix(in srgb,var(--bg) 85%,transparent)!important}
+.pill{display:none}
+h1 em{background:linear-gradient(90deg,var(--g2),var(--g))!important;-webkit-background-clip:text!important}
+.logo{animation:none!important;box-shadow:0 0 0 1px var(--line),0 0 50px -10px var(--tr),var(--sh)}
+.num b{font-family:"Courier New",monospace;font-weight:700}
+.logo{background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;position:relative}
+.logo img{border-radius:0!important;filter:drop-shadow(0 6px 18px rgba(0,0,0,.25))}
+.logo:before{content:"";position:absolute;inset:8% 8%;background:radial-gradient(closest-side,var(--tr),transparent);opacity:.35;filter:blur(30px);z-index:-1}
+.logo .lg-d{display:none!important}html.dark .logo .lg-d{display:block!important}html.dark .logo .lg-l{display:none!important}
 
-        * { box-sizing: border-box; transition: all 0.3s ease; }
-
-        body {
-            font-family: 'Cairo', 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 420px;
-            padding: 2rem;
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            border-radius: 25px;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--glow);
-            margin-bottom: 20px;
-        }
-
-        .header-actions { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
-        .controls-left { display: flex; gap: 8px; }
-
-        .btn-tool {
-            background: var(--input-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-            padding: 8px 14px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 0.8rem;
-        }
-
-        /* مفتاح التحويل الجديد */
-        .mode-selector {
-            display: flex;
-            background: var(--input-bg);
-            border-radius: 12px;
-            padding: 4px;
-            margin-bottom: 1.5rem;
-            border: 1px solid var(--border-color);
-        }
-        .mode-btn {
-            flex: 1;
-            padding: 8px;
-            border: none;
-            background: transparent;
-            color: var(--text-color);
-            cursor: pointer;
-            font-family: 'Cairo';
-            font-size: 0.85rem;
-            border-radius: 8px;
-        }
-        .mode-btn.active {
-            background: var(--primary-neon);
-            color: #000;
-            font-weight: bold;
-        }
-
-        .logo-main {
-            font-size: 2rem; font-weight: 800; color: var(--primary-neon);
-            text-align: center; animation: neon-pulse 2s infinite alternate;
-        }
-        @keyframes neon-pulse {
-            from { text-shadow: 0 0 5px var(--primary-neon); transform: scale(1); }
-            to { text-shadow: 0 0 15px var(--primary-neon); transform: scale(1.02); }
-        }
-
-        .input-group { margin-bottom: 1rem; }
-        .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        label { display: block; margin-bottom: 5px; font-size: 0.8rem; opacity: 0.8; }
-        input {
-            width: 100%; padding: 12px; border-radius: 12px; border: 1px solid var(--border-color);
-            background: var(--input-bg); color: var(--text-color); outline: none;
-        }
-        input:disabled { opacity: 0.4; cursor: not-allowed; }
-
-        .smart-indicators {
-            margin-top: 10px; padding: 12px; background: rgba(0,0,0,0.2); border-radius: 15px; border: 1px solid var(--border-color);
-        }
-        .indicator-item { margin-bottom: 8px; }
-        .indicator-label { display: flex; justify-content: space-between; font-size: 0.7rem; margin-bottom: 4px; }
-        .indicator-bar { height: 6px; background: #1e293b; border-radius: 3px; overflow: hidden; }
-        .indicator-fill { height: 100%; width: 0%; transition: width 0.5s; }
-
-        .results {
-            margin-top: 1.5rem; padding: 15px; background: rgba(0, 0, 0, 0.15); border-radius: 15px; border: 1px solid var(--border-color);
-        }
-        .result-item { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.85rem; }
-        .result-item.highlight { border-top: 1px solid var(--border-color); padding-top: 10px; font-size: 1rem; color: var(--primary-neon); }
-
-        .save-btn {
-            width: 100%; background: transparent; color: var(--primary-neon); border: 1px solid var(--primary-neon);
-            padding: 14px; border-radius: 15px; font-weight: bold; cursor: pointer; margin-top: 1rem;
-        }
-
-        .info-box { width: 100%; max-width: 420px; padding: 1.5rem; background: var(--card-bg); border-radius: 20px; border: 1px solid var(--border-color); margin-bottom: 80px; font-size: 0.8rem; }
-
-        .footer-social { position: fixed; bottom: 20px; left: 20px; display: flex; flex-direction: column; gap: 12px; }
-        .social-icon { width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; }
-        .icon-wa { background: #25d366; } .icon-ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
-    </style>
-</head>
-<body>
-
-<div class="container" id="calculatorCard">
-    <div class="header-actions">
-        <div class="controls-left">
-            <button class="btn-tool" onclick="toggleLang()">EN</button>
-            <button class="btn-tool" onclick="toggleTheme()" id="themeBtn">🌙</button>
-        </div>
-        <button class="btn-tool" style="color:#ef4444" onclick="resetAll()">مسح</button>
-    </div>
-
-    <div class="logo-main">FC ESNA 2</div>
-    <p style="text-align:center; font-size:0.7rem; opacity:0.6; margin-bottom:1rem;">FINANCE SYSTEM</p>
-
-    <div class="mode-selector">
-        <button class="mode-btn active" id="modeCalc" onclick="setMode('calc')">حساب القسط</button>
-        <button class="mode-btn" id="modeCheck" onclick="setMode('check')">كشف فائدة خارجي</button>
-    </div>
-
-    <div class="input-group">
-        <label>أصل المبلغ</label>
-        <input type="number" id="amount" placeholder="0.00" oninput="calculate()">
-    </div>
-
-    <div class="input-row">
-        <div class="input-group">
-            <label>مصاريف إدارية (%)</label>
-            <input type="number" id="adminRate" value="5" oninput="calculate()">
-        </div>
-        <div class="input-group">
-            <label id="dynamicLabel">الفايدة (%)</label>
-            <input type="number" id="dynamicInput" placeholder="0" oninput="calculate()">
-        </div>
-    </div>
-
-    <div class="input-group">
-        <label>المدة (بالشهور)</label>
-        <input type="number" id="months" placeholder="0" oninput="calculate()">
-    </div>
-
-    <div class="smart-indicators">
-        <div class="indicator-item">
-            <div class="indicator-label"><span>إجمالي الربح (فوائد + مصاريف)</span><span id="profitVal">0</span></div>
-            <div class="indicator-bar"><div id="profitFill" class="indicator-fill" style="background: #22c55e;"></div></div>
-        </div>
-        <div class="indicator-item">
-            <div class="indicator-label"><span>مستوى مخاطرة القسط</span><span id="riskText">آمن</span></div>
-            <div class="indicator-bar"><div id="riskFill" class="indicator-fill"></div></div>
-        </div>
-    </div>
-
-    <div class="results">
-        <div class="result-item"><span>المصاريف الإدارية:</span> <span id="adminFee">0</span></div>
-        <div class="result-item"><span>الصافي بعد المصاريف:</span> <span id="netAfterAdmin">0</span></div>
-        <div class="result-item"><span>إجمالي الفائدة:</span> <span id="totalInterestVal">0</span></div>
-        <div class="result-item" id="finalLabelRow"><span>القسط الشهري (مقرب):</span> <span id="finalResult" style="color: var(--secondary-neon);">0</span></div>
-        <div class="result-item highlight"><span>صافي المستلم النهائي:</span> <span id="netAmount">0</span></div>
-    </div>
-
-    <button class="save-btn" onclick="downloadImage()">تصدير بيانات العملية</button>
-</div>
-
-<div class="info-box">
-    <h3 id="infoTitle">دليل الاستخدام</h3>
-    <ul id="infoList">
-        <li><b>وضع حساب القسط:</b> أدخل المبلغ والفايدة لتعرف القسط.</li>
-        <li><b>وضع كشف الفائدة:</b> أدخل المبلغ والقسط اللي العميل قالهولك عشان تعرف الشركة التانية بتحسب فايدة كام %.</li>
-        <li>يتم جبر القسط لأقرب 5 جنيهات دائماً.</li>
-    </ul>
-</div>
-
-<div class="footer-social">
-    <a href="https://wa.me/message/FJEGUNCJ4JX7P1" class="social-icon icon-wa" target="_blank">WA</a>
-    <a href="https://www.instagram.com/osamamasrawy" class="social-icon icon-ig" target="_blank">IG</a>
-</div>
-
+:root{--pk:#b66bff;--bl:#3b9cff}
+html.dark{--bg:#060810;--sf:#0e1220;--line:rgba(160,190,255,.12);--g:#2cf2d2;--g2:#34e07a;--tr:rgba(44,242,210,.5)}
+.bl{display:inline-block;width:34px;height:34px}.bl img{width:100%;height:100%;object-fit:contain;display:block}
+.brand i{display:none}
+.bl .lg-d{display:none!important}html.dark .bl .lg-d{display:block!important}html.dark .bl .lg-l{display:none!important}
+.bl .lg-l{display:block}
+body:after{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:
+ radial-gradient(520px 380px at 12% 8%,rgba(182,107,255,.20),transparent 70%),
+ radial-gradient(560px 420px at 92% 18%,rgba(44,242,210,.20),transparent 70%),
+ radial-gradient(600px 400px at 60% 95%,rgba(59,156,255,.16),transparent 70%)}
+html:not(.dark) body:after{opacity:.55}
+h1{font-size:clamp(34px,7.5vw,60px)!important;font-weight:900}
+h1 em{background:linear-gradient(90deg,var(--g),var(--bl),var(--pk))!important;-webkit-background-clip:text!important;background-size:200% 100%;animation:sh 6s linear infinite}
+@keyframes sh{to{background-position:200% 0}}
+html.dark h1 em{filter:drop-shadow(0 0 18px rgba(44,242,210,.45))}
+.eb{text-shadow:0 0 12px var(--tr)}
+.b1{background:linear-gradient(120deg,var(--g),var(--g2))!important;box-shadow:0 0 0 1px rgba(255,255,255,.2) inset,0 0 28px var(--tr),0 14px 40px -8px var(--tr)!important}
+.b2{border-color:color-mix(in srgb,var(--pk) 55%,transparent)!important;box-shadow:0 0 18px rgba(182,107,255,.25)}
+.card{position:relative;border:1px solid transparent!important;background:linear-gradient(var(--sf),var(--sf)) padding-box,linear-gradient(135deg,var(--g),var(--pk) 55%,var(--bl)) border-box!important;box-shadow:0 0 22px -6px var(--tr),var(--sh)}
+html:not(.dark) .card{box-shadow:var(--sh)}
+.card:nth-child(even){background:linear-gradient(var(--sf),var(--sf)) padding-box,linear-gradient(135deg,var(--bl),var(--pk) 50%,var(--g)) border-box!important}
+.card:hover{transform:translateY(-6px) scale(1.01)}
+.ico{background:linear-gradient(135deg,color-mix(in srgb,var(--g) 25%,transparent),color-mix(in srgb,var(--pk) 25%,transparent))!important;color:var(--g);box-shadow:0 0 18px -2px var(--tr)}
+html.dark .ico{color:#fff}
+.num{border-color:color-mix(in srgb,var(--g) 35%,var(--line))!important;transition:.3s}
+.num:hover{box-shadow:0 0 26px -6px var(--tr);transform:translateY(-2px)}
+.num b{color:var(--g)}html:not(.dark) .num b{color:#0b7d70}
+.num button{background:linear-gradient(120deg,var(--g),var(--g2))!important;color:#03231d!important;box-shadow:0 0 16px -2px var(--tr)}
+.hero{padding-top:56px}
+.logo:before{opacity:.65!important;background:radial-gradient(closest-side,var(--pk),transparent 55%),radial-gradient(closest-side,var(--g),transparent 80%)!important;filter:blur(50px)!important;inset:0!important}
+.logo img{filter:drop-shadow(0 0 24px var(--tr))!important}
+html:not(.dark) .logo img{filter:drop-shadow(0 8px 22px rgba(0,0,0,.18))!important}
+.logo{animation:fl 6s ease-in-out infinite!important}
+.circ path:not(.s){stroke:var(--g);stroke-width:1.6}
+.circ circle{filter:drop-shadow(0 0 4px var(--g))}
+.circ{opacity:.8}
+.wab{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(120deg,#25d366,#1fb76a);color:#04210f;font-weight:800;font-size:14px;border-radius:14px;padding:10px 16px;text-decoration:none;box-shadow:0 0 18px -2px rgba(37,211,102,.6)}
+.grp{display:flex;flex-direction:column;gap:18px;align-items:flex-start;padding:26px;border-radius:24px;border:1px solid transparent;background:linear-gradient(var(--sf),var(--sf)) padding-box,linear-gradient(135deg,#25d366,var(--g),var(--pk)) border-box;box-shadow:0 0 40px -10px rgba(37,211,102,.45)}
+.gj{text-decoration:none;display:inline-block;background:linear-gradient(120deg,#25d366,#1fb76a)!important;box-shadow:0 0 28px rgba(37,211,102,.5)!important;color:#04210f!important}
+@media(min-width:760px){.grp{flex-direction:row;align-items:center;justify-content:space-between}}
+</style></head><body><svg class="circ" width="100%" height="100%" viewBox="0 0 1280 900" preserveAspectRatio="xMidYMid slice"><g><path class="s" d="M0 120H260L330 190H700L760 130H1280"/><path d="M0 120H260L330 190H700L760 130H1280"/><path class="s" d="M130 0V160L190 220V620"/><path class="s" d="M1100 0V120L1060 170V420L1110 470V900"/><path d="M1100 0V120L1060 170V420L1110 470V900"/><path class="s" d="M0 700H230L280 650H520"/><path class="s" d="M700 820H960L1010 770H1280"/><path d="M700 820H960L1010 770H1280"/><circle cx="330" cy="190" r="3"/><circle cx="760" cy="130" r="3"/><circle cx="1060" cy="170" r="3"/><circle cx="280" cy="650" r="3"/><circle cx="1010" cy="770" r="3"/></g></svg>
+<div class="nav"><div class="in"><div class="brand"><span class="bl"><img class="lg-l" src="N_light.png"><img class="lg-d" src="N_dark.png"></span>OPA Store</div><div class="tg"><button id="th"><svg width=18 height=18 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5 19 19M5 19l1.5-1.5M17.5 6.5 19 5"/></svg></button><button id="lg">EN</button></div></div></div>
+<div class="hero"><div class="in"><div><span class="pill rv"><span data-ar="بيع · شراء · استبدال · خدمات مالية" data-en="Sell · Buy · Exchange · Financial services"></span></span>
+<div class="eb rv"><span data-ar="أوبا ستور · خدمات الموبايل والكاش" data-en="OPA STORE · PHONE &amp; CASH SERVICES"></span></div><h1 class="rv"><span data-ar="كل خدمات <em>الموبايل والكاش</em> في مكان واحد" data-en="Everything for your <em>phone and cash</em>, in one place"></span></h1>
+<p class="lead rv"><span data-ar="صيانة، سوفت وير، تحويل كاش ومدفوعات إلكترونية. فريق محترف وخدمة سريعة." data-en="Repairs, software, cash transfers and e-payments. A professional team and fast service."></span></p>
+<div class="btns rv"><a class="b1" href="#nums"><span data-ar="أرقام التحويل" data-en="Payment numbers"></span></a><a class="b2" href="#svc"><span data-ar="خدماتنا" data-en="Our services"></span></a></div></div>
+<div class="logo"><img class="lg-l" src="L_light.png"><img class="lg-d" src="L_dark.png"></div></div></div>
+<section id="svc"><div class="in"><div class="eb rv"><span data-ar="الخدمات" data-en="SERVICES"></span></div><h2 class="rv"><span data-ar="خدماتنا" data-en="Our services"></span></h2><p class="sub rv"><span data-ar="كل اللي محتاجه لموبايلك وفلوسك" data-en="All you need for your phone and your money"></span></p><div class="grid"><div class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></div><h3><span data-ar="صيانة هاردوير" data-en="Hardware repair"></span></h3><p><span data-ar="أعطال الشاشات والبطاريات وقطع الغيار" data-en="Screens, batteries and spare parts"></span></p></div><div class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></div><h3><span data-ar="خدمات سوفت وير" data-en="Software services"></span></h3><p><span data-ar="فلاش وتحديث وتثبيت تطبيقات وإصلاح أعطال النظام" data-en="Flashing, updates, app installation and system repair"></span></p></div><div class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></svg></div><h3><span data-ar="فك حماية الجهاز وFRP" data-en="Device unlock & FRP"></span></h3><p><span data-ar="لأصحاب الأجهزة، بإثبات ملكية" data-en="For device owners, with proof of ownership"></span></p></div><div class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h14M13 6l6 6-6 6"/></svg></div><h3><span data-ar="تحويل واستلام كاش" data-en="Cash send & receive"></span></h3><p><span data-ar="على كل المحافظ الإلكترونية" data-en="Across all e-wallets"></span></p></div><div class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 10h18M7 15h3"/></svg></div><h3><span data-ar="رصيد ومدفوعات إلكترونية" data-en="Credit & e-payments"></span></h3><p><span data-ar="شحن رصيد وسداد فواتير" data-en="Top-ups and bill payments"></span></p></div><div class="card rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h14l-3-3M20 16H6l3 3"/></svg></div><h3><span data-ar="بيع وشراء واستبدال" data-en="Buy, sell & exchange"></span></h3><p><span data-ar="موبايلات واكسسوارات" data-en="Phones and accessories"></span></p></div></div></div></section>
+<section id="nums"><div class="in"><div class="eb rv"><span data-ar="المدفوعات" data-en="PAYMENTS"></span></div><h2 class="rv"><span data-ar="أرقام تحويل واستلام الكاش" data-en="Cash transfer and receive numbers"></span></h2><p class="sub rv"><span data-ar="اضغط نسخ لنسخ الرقم" data-en="Tap copy to copy a number"></span></p><div class="two"><div class="num rv"><div><small><span data-ar="محفظة كاش" data-en="Cash wallet"></span></small><b>01126715447</b></div><button data-copy="01126715447"><span data-ar="نسخ" data-en="Copy"></span></button></div><div class="num rv"><div><small><span data-ar="محفظة كاش" data-en="Cash wallet"></span></small><b>01553750590</b></div><button data-copy="01553750590"><span data-ar="نسخ" data-en="Copy"></span></button></div><div class="num rv"><div><small><span data-ar="محفظة كاش" data-en="Cash wallet"></span></small><b>01061297635</b></div><button data-copy="01061297635"><span data-ar="نسخ" data-en="Copy"></span></button></div><div class="num rv"><div><small><span data-ar="محفظة كاش" data-en="Cash wallet"></span></small><b>01034548492</b></div><button data-copy="01034548492"><span data-ar="نسخ" data-en="Copy"></span></button></div><div class="num rv"><div><small><span data-ar="محفظة كاش" data-en="Cash wallet"></span></small><b>01023296876</b></div><button data-copy="01023296876"><span data-ar="نسخ" data-en="Copy"></span></button></div><div class="num rv"><div><small><span data-ar="محفظة كاش" data-en="Cash wallet"></span></small><b>01000828771</b></div><button data-copy="01000828771"><span data-ar="نسخ" data-en="Copy"></span></button></div></div>
+<h2 style="margin-top:34px" class="rv"><span data-ar="أرقام إنستا باي" data-en="InstaPay numbers"></span></h2><p class="sub"></p><div class="two"><div class="num rv"><div><small><span data-ar="إنستا باي" data-en="InstaPay"></span></small><b>01023296876</b></div><button data-copy="01023296876"><span data-ar="نسخ" data-en="Copy"></span></button></div><div class="num rv"><div><small><span data-ar="إنستا باي" data-en="InstaPay"></span></small><b>01126715447</b></div><button data-copy="01126715447"><span data-ar="نسخ" data-en="Copy"></span></button></div></div></div></section>
+<section><div class="in"><h2 class="rv"><span data-ar="الإدارة" data-en="Management"></span></h2><p class="sub"></p><div class="team">
+<div class="num rv"><div><small><span data-ar="م / أحمد شاكر" data-en="Eng. Ahmed Shaker"></span></small><b>01126715447</b></div><a class="wab" href="https://wa.me/201126715447" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.3-.2-2.4.6.6-2.3-.2-.3A8 8 0 0 1 12 4zm-3 4c-.3 0-.6.1-.8.4-.3.4-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.200 5 4.400 2.500 1 3 .8 3.500.7.600-.1 1.800-.8 2-1.500.3-.7.3-1.300.2-1.500l-.5-.3-1.800-.9c-.3-.1-.5-.1-.7.1l-.9 1.100c-.2.200-.3.200-.6.100-1.100-.5-2-1.200-2.800-2.400-.2-.3 0-.5.200-.6l.5-.6c.1-.2.200-.4.100-.6l-.8-2c-.2-.5-.4-.5-.6-.5z"/></svg><span data-ar="واتساب" data-en="WhatsApp"></span></a></div>
+<div class="num rv"><div><small><span data-ar="م / أسامة عمر" data-en="Eng. Osama Omar"></span></small><b>01000828771</b></div><a class="wab" href="https://wa.me/201000828771" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 2a8 8 0 1 1-4.2 14.8l-.3-.2-2.4.6.6-2.3-.2-.3A8 8 0 0 1 12 4zm-3 4c-.3 0-.6.1-.8.4-.3.4-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.200 5 4.400 2.500 1 3 .8 3.500.7.600-.1 1.800-.8 2-1.500.3-.7.3-1.300.2-1.500l-.5-.3-1.800-.9c-.3-.1-.5-.1-.7.1l-.9 1.100c-.2.200-.3.200-.6.100-1.100-.5-2-1.200-2.800-2.400-.2-.3 0-.5.200-.6l.5-.6c.1-.2.200-.4.100-.6l-.8-2c-.2-.5-.4-.5-.6-.5z"/></svg><span data-ar="واتساب" data-en="WhatsApp"></span></a></div></div></div></section>
+<section><div class="in"><div class="grp rv"><div><div class="eb"><span data-ar="المجتمع" data-en="COMMUNITY"></span></div><h2 style="margin:0 0 6px"><span data-ar="انضم لجروب واتساب المحل" data-en="Join our shop WhatsApp group"></span></h2><p class="sub" style="margin:0"><span data-ar="عروض وأخبار وطلبات الخدمات في مكان واحد" data-en="Offers, news and service requests in one place"></span></p></div><a class="b1 gj" href="https://chat.whatsapp.com/KNR3UxQwSey8uzqTbvje96" target="_blank" rel="noopener"><span data-ar="انضم للجروب" data-en="Join the group"></span></a></div></div></section>
+<footer>© OPA Store · أوبا ستور</footer>
 <script>
-    let currentMode = 'calc'; // calc or check
-
-    function setMode(mode) {
-        currentMode = mode;
-        document.getElementById('modeCalc').classList.toggle('active', mode === 'calc');
-        document.getElementById('modeCheck').classList.toggle('active', mode === 'check');
-        
-        const label = document.getElementById('dynamicLabel');
-        const input = document.getElementById('dynamicInput');
-        const finalLabel = document.getElementById('finalLabelRow').querySelector('span:first-child');
-
-        if (mode === 'calc') {
-            label.innerText = "الفايدة (%)";
-            input.placeholder = "0";
-            finalLabel.innerText = "القسط الشهري (مقرب):";
-        } else {
-            label.innerText = "القسط الشهري";
-            input.placeholder = "ادخل قسط العميل";
-            finalLabel.innerText = "نسبة الفايدة المحسوبة:";
-        }
-        resetAll();
-    }
-
-    function calculate() {
-        const amount = parseFloat(document.getElementById('amount').value) || 0;
-        const adminRate = parseFloat(document.getElementById('adminRate').value) || 0;
-        const dynamicVal = parseFloat(document.getElementById('dynamicInput').value) || 0;
-        const months = parseInt(document.getElementById('months').value) || 0;
-
-        const adminFee = amount * (adminRate / 100);
-        const netAfterAdmin = amount - adminFee;
-        
-        let interestRate, roundedMonthly, totalInterest;
-
-        if (currentMode === 'calc') {
-            interestRate = dynamicVal;
-            totalInterest = amount * (interestRate / 100) * (months / 12);
-            const rawMonthly = months > 0 ? (amount + totalInterest) / months : 0;
-            roundedMonthly = Math.ceil(rawMonthly / 5) * 5;
-            document.getElementById('finalResult').innerText = roundedMonthly.toLocaleString();
-            document.getElementById('totalInterestVal').innerText = totalInterest.toLocaleString();
-        } else {
-            // كشف الفائدة: الفائدة = ((القسط * الشهور) - الأصل) / الأصل / (الشهور/12)
-            roundedMonthly = dynamicVal;
-            const totalReturn = roundedMonthly * months;
-            totalInterest = totalReturn - amount;
-            interestRate = (amount > 0 && months > 0) ? (totalInterest / amount) / (months / 12) * 100 : 0;
-            document.getElementById('finalResult').innerText = interestRate.toFixed(2) + " %";
-            document.getElementById('totalInterestVal').innerText = Math.max(0, totalInterest).toLocaleString();
-        }
-
-        const netFinal = amount > 0 ? (netAfterAdmin - (currentMode === 'calc' ? roundedMonthly : dynamicVal)) : 0;
-        document.getElementById('adminFee').innerText = adminFee.toLocaleString();
-        document.getElementById('netAfterAdmin').innerText = netAfterAdmin.toLocaleString();
-        document.getElementById('netAmount').innerText = Math.max(0, Math.floor(netFinal)).toLocaleString();
-
-        // تحديث المؤشرات
-        const totalProfit = adminFee + totalInterest;
-        document.getElementById('profitVal').innerText = Math.max(0, Math.floor(totalProfit)).toLocaleString();
-        document.getElementById('profitFill').style.width = Math.min((totalProfit/amount)*100, 100) + '%';
-
-        const riskRatio = (amount > 0) ? (roundedMonthly / amount) * 100 : 0;
-        const riskFill = document.getElementById('riskFill');
-        riskFill.style.width = Math.min(riskRatio * 5, 100) + '%';
-        if (riskRatio < 12) { riskFill.style.background = '#22c55e'; document.getElementById('riskText').innerText = 'آمن'; }
-        else { riskFill.style.background = '#ef4444'; document.getElementById('riskText').innerText = 'مرتفع'; }
-    }
-
-    function toggleTheme() {
-        const curr = document.documentElement.getAttribute('data-theme');
-        document.documentElement.setAttribute('data-theme', curr === 'light' ? 'dark' : 'light');
-    }
-
-    function resetAll() {
-        document.getElementById('amount').value = '';
-        document.getElementById('dynamicInput').value = '';
-        document.getElementById('months').value = '';
-        calculate();
-    }
-
-    async function downloadImage() {
-        const canvas = await html2canvas(document.getElementById('calculatorCard'), { backgroundColor: '#020617' });
-        const link = document.createElement('a');
-        link.download = 'FC-Result.png';
-        link.href = canvas.toDataURL();
-        link.click();
-    }
-</script>
-</body>
-</html>
+var d=document.documentElement,q=new URLSearchParams(location.search),st=window.localStorage;
+function sg(k){try{return st.getItem(k)}catch(e){return null}}function ss(k,v){try{st.setItem(k,v)}catch(e){}}
+function setL(l){d.lang=l;d.dir=l=='ar'?'rtl':'ltr';document.querySelectorAll('[data-ar]').forEach(function(e){e.innerHTML=e.dataset[l]});lg.textContent=l=='ar'?'EN':'\u0639\u0631\u0628\u064a';document.title=l=='ar'?'\u0623\u0648\u0628\u0627 \u0633\u062a\u0648\u0631 | OPA Store':'OPA Store | Phones, Cash & Payments';ss('opa-lang',l)}
+function setT(t){d.classList.toggle('dark',t=='dark');ss('opa-theme',t)}
+setL(q.get('lang')||sg('opa-lang')||'ar');
+setT(q.get('theme')||sg('opa-theme')||(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'));
+lg.onclick=function(){setL(d.lang=='ar'?'en':'ar')};
+th.onclick=function(){setT(d.classList.contains('dark')?'light':'dark')};
+function cp(t){if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(t);return new Promise(function(r){var a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity=0;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(a);r()})}
+document.querySelectorAll('[data-copy]').forEach(function(b){b.onclick=function(){cp(b.dataset.copy).then(function(){var s=b.querySelector('span');s.innerHTML=d.lang=='ar'?'\u062a\u0645 \u2713':'Copied \u2713';setTimeout(function(){s.innerHTML=s.dataset[d.lang]},1500)})}});
+</script></body></html>
